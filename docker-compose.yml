@@ -1,0 +1,13 @@
+version: "2"
+services:
+  rancher:
+    container_name: rancher
+    image: rancher/server
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ./mysql:/var/lib/mysql
+    restart: unless-stopped
+    environment:
+      - "TZ=Asia/Bangkok"
